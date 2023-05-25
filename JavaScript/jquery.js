@@ -4,10 +4,11 @@ function getComputerChoice() {
     return choices[randomIndex]; 
 }
 
-getComputerChoice()
+getComputerChoice();
 console.log(getComputerChoice());
 
-function playRound(playerSelection, computerSelection) { playerSelection = playerSelection.toLowerCase();
+function playRound(playerSelection, computerSelection) { 
+    playerSelection = playerSelection.toLowerCase();
     if (playerSelection === "rock" && computerSelection === "scissors" ||
     playerSelection === "paper" && computerSelection === "rock" ||
     playerSelection === "scissors" && computerSelection === "paper") {
@@ -21,8 +22,22 @@ function playRound(playerSelection, computerSelection) { playerSelection = playe
     }
 }
 
-playRound(playerSelection, computerSelection)
+playRound(playerSelection, computerSelection);
 
+function game() {
+    let round1 = playRound(prompt("Enter Rock, Paper, or Scissors"), getComputerChoice());
+    let round2 = playRound(prompt("Enter Rock, Paper, or Scissors"), getComputerChoice());
+    let round3 = playRound(prompt("Enter Rock, Paper, or Scissors"), getComputerChoice());
+    let round4 = playRound(prompt("Enter Rock, Paper, or Scissors"), getComputerChoice());
+    let round5 = playRound(prompt("Enter Rock, Paper, or Scissors"), getComputerChoice());
+    console.log(round1);
+    console.log(round2);
+    console.log(round3);
+    console.log(round4);
+    console.log(round5);
+}
+
+game();
 
 
 
