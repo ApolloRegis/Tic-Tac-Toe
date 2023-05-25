@@ -22,7 +22,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-playRound(playerSelection, computerSelection);
+
 
 function game() {
     let round1 = playRound(prompt("Enter Rock, Paper, or Scissors"), getComputerChoice());
