@@ -4,6 +4,7 @@ function getComputerChoice() {
     return choices[randomIndex]; 
 }
 
+getComputerChoice()
 console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) { playerSelection = playerSelection.toLowerCase();
@@ -19,6 +20,8 @@ function playRound(playerSelection, computerSelection) { playerSelection = playe
         return "You Lose! " + computerSelection + " beats " + playerSelection;
     }
 }
+
+playRound(playerSelection, computerSelection)
 
 
 
