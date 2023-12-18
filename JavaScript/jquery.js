@@ -8,3 +8,20 @@ function getComputerChoice() {
         return('Scissors');
     };
   };
+
+  const playRound = function(playerSelection, computerSelection){
+    let picked = playerSelection.toLowerCase();
+    let chlng = computerSelection.toLowerCase();
+    let plyrp = picked.charAt(0).toUpperCase() + picked.slice(1);
+    let cmptrp = chlng.charAt(0).toUpperCase() + chlng.slice(1);
+  
+    if(picked === chlng){
+      return 'It\'s a tie!';
+    } else if((picked === 'rock' && chlng === 'scissors') || 
+    (picked === 'paper' && chlng === 'rock') || 
+    (picked === 'scissors' && chlng === 'paper')) {
+      return 'You win!' + ' ' + plyrp + ' ' + 'beats' + ' ' + cmptrp + '.'; 
+    } else {
+      return 'You lose!' + ' ' + cmptrp + ' ' + 'beats' + ' ' + plyrp + '.';
+    };
+  };
