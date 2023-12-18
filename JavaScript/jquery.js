@@ -46,7 +46,7 @@ function getComputerChoice() {
       };
     };
     if(pscore === cscore) {
-      console.log('Tie, no winner');
+      console.log('Tie game, no winner');
     } else if(pscore > cscore) {
       console.log('Player wins game!');
     } else {
