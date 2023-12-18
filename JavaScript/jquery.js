@@ -25,3 +25,31 @@ function getComputerChoice() {
       return 'You lose!' + ' ' + cmptrp + ' ' + 'beats' + ' ' + plyrp + '.';
     };
   };
+
+  function game() {
+    let pscore = 0;
+    let cscore = 0;
+    
+    for(i=0; i<5; i++) {
+        let input = window.prompt();
+        let input2 = getComputerChoice();
+        let result = playRound(input, input2);
+  
+      if(result.includes('You win!')) {
+        pscore += 1;
+        console.log(result);
+      } else if(result.includes('You lose!')) {
+        cscore += 1;
+        console.log(result);
+      } else {
+        console.log(result);
+      };
+    };
+    if(pscore === cscore) {
+      console.log('Tie, no winner');
+    } else if(pscore > cscore) {
+      console.log('Player wins game!');
+    } else {
+      console.log('Computer wins game!');
+    };
+  };
