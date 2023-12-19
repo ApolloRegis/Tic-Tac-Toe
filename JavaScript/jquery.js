@@ -1,55 +1,45 @@
 function getComputerChoice() {
     let choice = Math.random();
     if(choice<0.33) {
-        return('Rock');
+        return('rock');
     } else if(choice<0.66) {
-        return('Paper');
+        return('paper');
     } else {
-        return('Scissors');
+        return('scissors');
     };
   };
 
   const playRound = function(playerSelection, computerSelection){
-    let picked = playerSelection.toLowerCase();
-    let chlng = computerSelection.toLowerCase();
-    let plyrp = picked.charAt(0).toUpperCase() + picked.slice(1);
-    let cmptrp = chlng.charAt(0).toUpperCase() + chlng.slice(1);
-  
-    if(picked === chlng){
-      return 'It\'s a tie!';
-    } else if((picked === 'rock' && chlng === 'scissors') || 
-    (picked === 'paper' && chlng === 'rock') || 
-    (picked === 'scissors' && chlng === 'paper')) {
-      return 'You win!' + ' ' + plyrp + ' ' + 'beats' + ' ' + cmptrp + '.'; 
-    } else {
-      return 'You lose!' + ' ' + cmptrp + ' ' + 'beats' + ' ' + plyrp + '.';
-    };
-  };
 
-  function game() {
-    let pscore = 0;
-    let cscore = 0;
-    
-    for(i=0; i<5; i++) {
-        let input = window.prompt();
-        let input2 = getComputerChoice();
-        let result = playRound(input, input2);
-  
-      if(result.includes('You win!')) {
-        pscore += 1;
-        console.log(result);
-      } else if(result.includes('You lose!')) {
-        cscore += 1;
-        console.log(result);
-      } else {
-        console.log(result);
-      };
-    };
-    if(pscore === cscore) {
-      console.log('Tie game, no winner');
-    } else if(pscore > cscore) {
-      console.log('Player wins game!');
+    if(playerSelection === computerSelection){
+      console.log('It\'s a tie!');
+    } else if((playerSelection === 'rock' && computerSelection === 'scissors') || 
+    (playerSelection === 'paper' && computerSelection === 'rock') || 
+    (playerSelection === 'scissors' && computerSelection === 'paper')) {
+      console.log('You win!' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection + '.'); 
     } else {
-      console.log('Computer wins game!');
+      console.log('You lose!' + ' ' + computerSelection + ' ' + 'beats' + ' ' + playerSelection + '.');
     };
   };
+  
+  const body = document.querySelector('body');
+  
+const btn1 = document.createElement('button');
+btn1.addEventListener('click', () => {
+    playRound('rock', getComputerChoice());
+});
+btn1.textContent = 'Rock';
+body.appendChild(btn1);
+const btn2 = document.createElement('button');
+btn2.addEventListener('click', () => {
+  playRound('paper', getComputerChoice());
+});
+btn2.textContent ='Paper';
+body.appendChild(btn2);
+const btn3 = document.createElement('button');
+btn3.addEventListener('click', () => {
+  playRound('scissors', getComputerChoice());
+});
+btn3.textContent = 'Scissors';
+body.appendChild(btn3);
+  
